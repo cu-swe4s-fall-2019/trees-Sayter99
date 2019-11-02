@@ -53,10 +53,10 @@ if __name__ == '__main__':
         index = 0
         # key/value pairs are key/key_val here
         if (args.data_structure == 'hash'):
-            # create hash table with N = 1000000
-            # add, search
-            container = hash_tables.ChainedHash(1000000,
-                                                hash_functions.h_rolling)
+            # create hash table with N = 100000
+            # add
+            container = hash_tables.ChainedHash(100000,
+                                                hash_functions.h_ascii)
             start = time.time()
             keys = []
             for l in open(args.dataset):
@@ -66,9 +66,21 @@ if __name__ == '__main__':
                 index = index + 1
             end = time.time()
             print('insert: ' + str(end - start))
+            # search
+            start = time.time()
+            for key in keys:
+                container.search(key)
+            end = time.time()
+            print('search: ' + str(end - start))
+            # search not exist
+            start = time.time()
+            for key in keys:
+                container.search(key + '_not')
+            end = time.time()
+            print('search NOT: ' + str(end - start))
             sys.exit(0)
         elif (args.data_structure == 'AVL'):
-            # insert, search
+            # insert
             container = avl.AVL()
             start = time.time()
             keys = []
@@ -79,9 +91,21 @@ if __name__ == '__main__':
                 index = index + 1
             end = time.time()
             print('insert: ' + str(end - start))
+            # search
+            start = time.time()
+            for key in keys:
+                container.search(key)
+            end = time.time()
+            print('search: ' + str(end - start))
+            # search not exist
+            start = time.time()
+            for key in keys:
+                container.search(key + '_not')
+            end = time.time()
+            print('search NOT: ' + str(end - start))
             sys.exit(0)
         elif (args.data_structure == 'tree'):
-            # insert, search
+            # insert
             container = binary_tree.BinaryTree()
             start = time.time()
             keys = []
@@ -92,6 +116,18 @@ if __name__ == '__main__':
                 index = index + 1
             end = time.time()
             print('insert: ' + str(end - start))
+            # search
+            start = time.time()
+            for key in keys:
+                container.search(key)
+            end = time.time()
+            print('search: ' + str(end - start))
+            # search not exist
+            start = time.time()
+            for key in keys:
+                container.search(key + '_not')
+            end = time.time()
+            print('search NOT: ' + str(end - start))
             sys.exit(0)
         else:
             print('Invalid data structure')
