@@ -14,3 +14,4 @@ before_install:
 
 script:
     - python test_binary_tree.py
+    - bash test_insert_pairs.sh
