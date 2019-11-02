@@ -45,15 +45,23 @@ The outputs of the program are
 *hash table: chained hash with h_ascii*
 
 ### Sorted
+
 **Data Size: 4000**
+
 ![](images/4000s.png)
+
 **Data Size: 8000**
+
 ![](images/8000s.png)
 
 ### Random
+
 **Data Size: 4000**
+
 ![](images/4000.png)
+
 **Data Size: 8000**
+
 ![](images/8000.png)
 
 ### Discussion
