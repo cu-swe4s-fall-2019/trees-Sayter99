@@ -14,19 +14,19 @@ class BinaryTree:
 
     def insert(self, key, value=None):
         # recursively find a position to insert
-        if (self.root == None):
+        if (self.root is None):
             self.root = Node(key, value)
         else:
             self.add(key, value, self.root)
 
     def add(self, key, value, node):
         if (key < node.key):
-            if (not node.left is None):
+            if (node.left is not None):
                 self.add(key, value, node.left)
             else:
                 node.left = Node(key, value)
         else:
-            if (not node.right is None):
+            if (node.right is not None):
                 self.add(key, value, node.right)
             else:
                 node.right = Node(key, value)
@@ -43,7 +43,7 @@ class BinaryTree:
             return node
         elif (node.right is None and node.left is None):
             return None
-        elif (key < node.key and (not node.left is None)):
+        elif (key < node.key and (node.left is not None)):
             return self.find(key, node.left)
-        elif (key > node.key and (not node.right is None)):
+        elif (key > node.key and (node.right is not None)):
             return self.find(key, node.right)

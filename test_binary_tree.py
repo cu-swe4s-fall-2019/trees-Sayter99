@@ -2,6 +2,7 @@ import binary_tree
 import unittest
 import os
 
+
 class TestBinaryTree(unittest.TestCase):
     def test_insert(self):
         tree = binary_tree.BinaryTree()
@@ -23,6 +24,7 @@ class TestBinaryTree(unittest.TestCase):
         self.assertEqual(search_a.value, 'b_val')
         search_a = tree.search('c')
         self.assertEqual(search_a.value, 'c_val')
+
 
 if __name__ == '__main__':
     unittest.main()
